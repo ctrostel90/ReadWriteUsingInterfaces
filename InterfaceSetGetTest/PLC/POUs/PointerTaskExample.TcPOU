@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="PointerTaskExample" Id="{13908b64-3e2b-4c4c-a38f-3c72e669e0b8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK PointerTaskExample
+VAR
+	_parameter : I_ParameterPosition;
+	_status	   : POINTER TO ParameterSet;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="CyclicLogic" Id="{eb4da503-4e6e-49f9-8c6d-b38b2ef47199}">
+      <Declaration><![CDATA[METHOD CyclicLogic
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF _parameter = 0 OR _status = 0 THEN
+	RETURN;
+END_IF
+_status^.Position := _parameter.Position;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_Init" Id="{37956a57-2694-4fad-ad90-f5f58c7a227e}">
+      <Declaration><![CDATA[//FB_Init is always available implicitly and it is used primarily for initialization.
+//The return value is not evaluated. For a specific influence, you can also declare the
+//methods explicitly and provide additional code there with the standard initialization
+//code. You can evaluate the return value.
+METHOD FB_Init: BOOL
+VAR_INPUT
+    bInitRetains: BOOL; // TRUE: the retain variables are initialized (reset warm / reset cold)
+    bInCopyCode: BOOL;  // TRUE: the instance will be copied to the copy code afterward (online change)   
+	Mover : I_Mover;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_parameter := Mover.Parameters;
+__QUERYPOINTER(Mover.Status,_Status);
+]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

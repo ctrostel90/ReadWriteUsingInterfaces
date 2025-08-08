@@ -42,7 +42,10 @@
     <Compile Include="POUs\ParameterSet.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Task.TcPOU">
+    <Compile Include="POUs\InterfaceTaskExample.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PointerTaskExample.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

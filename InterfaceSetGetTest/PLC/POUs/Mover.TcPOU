@@ -6,8 +6,11 @@ VAR
 	{attribute 'hide'}
 	_Parameters : ParameterSet;
 	{attribute 'hide'}
-	_Status : ParameterSet;
-	testTask : Task(_Parameters,_Status);
+	_Status		: ParameterSet;
+	{attribute 'hide'}
+	_PointerExample : BOOL;
+	testTask	: InterfaceTaskExample(_Parameters, _Status);
+	pointerTask : PointerTaskExample(THIS^);
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
@@ -18,7 +21,12 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[testTask.CyclicLogic();]]></ST>
+        <ST><![CDATA[IF _PointerExample THEN
+	pointerTask.CyclicLogic();
+	RETURN;
+END_IF
+
+testTask.CyclicLogic();]]></ST>
       </Implementation>
     </Method>
     <Property Name="Parameters" Id="{64adcffc-21ec-43d1-8a59-70cb5447c9be}">
@@ -38,6 +46,26 @@ END_VAR
 ]]></Declaration>
         <Implementation>
           <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="PointerExample" Id="{632eaa34-f068-460e-81ad-c49321734460}">
+      <Declaration><![CDATA[{attribute 'monitoring':='call'}
+PROPERTY PointerExample : BOOL]]></Declaration>
+      <Get Name="Get" Id="{fd642448-fc89-4cf1-b371-78ed23962109}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[PointerExample := _PointerExample;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{19f2b6ca-85c5-4aed-96f0-6aaf7df0dbbd}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_PointerExample := PointerExample;]]></ST>
         </Implementation>
       </Set>
     </Property>

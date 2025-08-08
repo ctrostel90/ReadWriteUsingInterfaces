@@ -8,3 +8,5 @@ Set Mover.Parameter.Position, the internal Task on the mover will then set that 
 
 Notice that you are not able to edit Mover.Status in logic.
 
+As a seperate implementation, one can also use the __QUERYPOINTER() function to use pointers to acomplish the same effect. Use the `Mover.PointerExample` bit to swap between using the pointer implementation and the interface implementation.
+

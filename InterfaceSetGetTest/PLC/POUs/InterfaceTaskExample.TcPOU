@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1">
-  <POU Name="Task" Id="{5dd8af2f-4322-4165-b098-9cb73464895d}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK Task
+  <POU Name="InterfaceTaskExample" Id="{5dd8af2f-4322-4165-b098-9cb73464895d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK InterfaceTaskExample
 VAR
 	_parameter : I_ParameterPosition;
 	_status	   : I_ParameterPosition;
