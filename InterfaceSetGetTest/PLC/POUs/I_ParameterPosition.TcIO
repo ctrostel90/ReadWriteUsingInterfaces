@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="I_ParameterPosition" Id="{9a57df85-ec8d-4549-914b-3fd2a8bc008f}">
+    <Declaration><![CDATA[INTERFACE I_ParameterPosition EXTENDS I_ParameterPositionGetter]]></Declaration>
+    <Property Name="Position" Id="{a52a54f5-e79c-49a1-b0b1-c1e423719c1b}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Position : LREAL]]></Declaration>
+      <Set Name="Set" Id="{31ad3580-0afa-49a0-9b06-10e9ae6327e4}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

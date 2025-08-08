@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="ParameterSet" Id="{ff106fc1-0178-45a0-9307-0950a21d68af}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK ParameterSet IMPLEMENTS I_ParameterPosition
+VAR
+	{attribute 'hide'}
+	_Position : LREAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="Position" Id="{db9a9f4e-eede-465b-b1ab-a7ba37c55d35}">
+      <Declaration><![CDATA[PROPERTY Position : LREAL]]></Declaration>
+      <Get Name="Get" Id="{f3051efa-505e-4b65-bbc1-d2e26f2f2425}">
+        <Declaration><![CDATA[
+VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Position := _Position;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{87a37641-a65d-456c-b671-9daeefcb0dbd}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Position := Position;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+  </POU>
+</TcPlcObject>

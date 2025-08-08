@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="I_ParameterPositionGetter" Id="{10703703-a0d9-4fc8-b31a-8c1d3da1f916}">
+    <Declaration><![CDATA[INTERFACE I_ParameterPositionGetter EXTENDS I_Base
+]]></Declaration>
+    <Property Name="Position" Id="{6ebfa236-c9a7-4610-b5ce-1616d65ee0bc}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Position : LREAL]]></Declaration>
+      <Get Name="Get" Id="{9f58f3f7-e161-4378-b5be-18e5146e0b0e}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

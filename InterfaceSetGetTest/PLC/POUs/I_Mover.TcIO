@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="I_Mover" Id="{9bb10a3f-2f99-4fcb-8194-d43da0221a55}">
+    <Declaration><![CDATA[INTERFACE I_Mover EXTENDS I_Base
+]]></Declaration>
+    <Property Name="Parameters" Id="{16171c9e-fc79-404d-a79c-639c3690963c}">
+      <Declaration><![CDATA[{attribute 'monitoring':='call'}
+PROPERTY Parameters : I_ParameterPosition]]></Declaration>
+      <Get Name="Get" Id="{a3e7bdb5-610a-4ec0-bd86-7e73a80f3402}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{da3fe086-677b-4248-a266-7327bf7e9e4f}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="Status" Id="{40b7d67b-24e5-44f2-a819-c4aa335e8856}">
+      <Declaration><![CDATA[{attribute 'monitoring':='call'}
+PROPERTY Status : I_ParameterPositionGetter]]></Declaration>
+      <Get Name="Get" Id="{e00bb714-94a6-40e5-9449-9c78977bad5f}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>
